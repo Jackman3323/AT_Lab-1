@@ -17,12 +17,34 @@ public class NodeArrayList <T>{
 
     //RETURN FALSE IF AN ERROR OCCURS
     public boolean add(T data){
-
+        try{
+            //Determine most recently added node/last in chain
+            Node curNode = ancestorNode;
+            for(int i = 0; i <= size; i++){
+                curNode = curNode.getChild();
+            }
+            //Create new node with data
+            Node newNode = new Node(data);
+            newNode.setParent(curNode);
+        }
+        catch(Exception e){
+            //Some exception occurred
+            return false;
+        }
+        //No exceptions occurred
+        return true;
     }
 
     //Add data at index
     public void add(int index, T data){
-
+        //Determine most recently added node/last in chain
+        Node curNode = ancestorNode;
+        for(int i = 0; i < index; i++){
+            curNode = curNode.getChild();
+        }
+        //Create new node with data
+        Node newNode = new Node(data);
+        newNode.setParent(curNode);
     }
 
     public T remove(int index){
