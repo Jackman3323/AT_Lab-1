@@ -34,16 +34,13 @@ public class NodeArrayList <T>{
     }
 
     public T set(int index, T data){
-        public T set(int index, T data){
+        Node currnode = ancestorNode;
             for(int i = 0;i<index;i++){
-                ancestorNode.getChild();
+               currnode = currnode.getChild();
             }
-            T removed = ancestorNode.get();
-            ancestorNode.set(data);
+            T removed = (T) currnode.get();
+            currnode.set(data);
             return removed;
-        }
-
-
     }
 
     public int size(){
