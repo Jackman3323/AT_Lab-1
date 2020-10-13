@@ -24,7 +24,7 @@ public class NodeArrayList <T>{
                 curNode = curNode.getChild();
             }
             //Create new node with data
-            Node newNode = new Node(data);
+            Node<T> newNode = new Node<>(data);
             newNode.setParent(curNode);
         }
         catch(Exception e){
@@ -44,7 +44,7 @@ public class NodeArrayList <T>{
             curNode = curNode.getChild();
         }
         //Create new node with data
-        Node newNode = new Node(data);
+        Node<T> newNode = new Node<>(data);
         newNode.setParent(curNode);
     }
 
