@@ -37,6 +37,7 @@ public class NodeArrayList <T>{
 
     //Add data at index
     public void add(int index, T data){
+
         //Determine most recently added node/last in chain
         Node curNode = ancestorNode;
         for(int i = 0; i < index; i++){
