@@ -26,7 +26,7 @@ public class NodeArrayList <T>{
     }
 
     public T remove(int index){
-
+        for (int i = index; i) pog
     }
 
     public T get(int index){
