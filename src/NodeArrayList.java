@@ -65,7 +65,13 @@ public class NodeArrayList <T>{
     }
 
     public T set(int index, T data){
-
+        Node currnode = ancestorNode;
+            for(int i = 0;i<index;i++){
+               currnode = currnode.getChild();
+            }
+            T removed = (T) currnode.get();
+            currnode.set(data);
+            return removed;
     }
 
     public int size(){
