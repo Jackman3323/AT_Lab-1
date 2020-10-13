@@ -26,7 +26,15 @@ public class NodeArrayList <T>{
     }
 
     public T remove(int index){
-        for (int i = index; i) pog
+        Node currNode = ancestorNode;
+        for (int i = index; i<size; i++){
+            currNode = currNode.getChild();
+
+        }
+        Node parentNode = currNode.getParent();
+        parentNode.setChild(currNode.getChild());
+        size--;
+        return (T) currNode.get();
     }
 
     public T get(int index){
