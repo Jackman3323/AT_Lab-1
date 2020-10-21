@@ -46,7 +46,11 @@ public class NodeArrayList <T>{
         }
         //Create new node with data
         Node<T> newNode = new Node<>(data);
+        Node<T> childNode = curNode.getChild();
         newNode.setParent(curNode);
+        newNode.setChild(childNode);
+
+        size++;
     }
 
     public T remove(int index){
@@ -65,8 +69,8 @@ public class NodeArrayList <T>{
         Node currnode = ancestorNode;
         for(int i = 0;i<=index;i++){
             currnode = currnode.getChild();
-            System.out.println("CurNode: " + currnode.get());
         }
+        System.out.println("CurNode: " + currnode.get());
         return (T) currnode.get();
     }
 

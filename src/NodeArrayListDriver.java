@@ -14,5 +14,8 @@ public class NodeArrayListDriver {
         System.out.println(StringNodes.get(1));
         System.out.println("Should say Your Dad...:");
         System.out.println(StringNodes.get(2));
+        StringNodes.remove(1);
+        System.out.println("should be your dad...:");
+        System.out.println(StringNodes.get(1));
     }
 }
